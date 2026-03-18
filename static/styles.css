@@ -1,0 +1,123 @@
+/* Light Mode*/
+:root {
+    --bg-color: #f4f7f6;
+    --surface-color: #ffffff;
+    --h1-color: #2c3e50;
+    --text-color: #333333;
+    --tab-header-text: #ffffff;
+    --table-border: #eeeeee;
+    --hover-bg: #f1f1f1;
+    --accent-color: #3498db;
+}
+
+/* Dark Mode*/
+body.dark-mode {
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --h1-color: #add8e6;
+    --text-color: #d3d3d3;
+    --tab-header-text: #ffffff;
+    --table-border: #333333; 
+    --zebra-bg: #1e1e1e;
+    --hover-bg: #333333;
+    --accent-color: #2980b9;
+}
+
+/* Base Design */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    color: var(--h1-color);
+    margin-bottom: 20px;
+}
+
+/* Button Styling */
+.custom-btn {
+    padding: 6px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth hover effect */
+    
+    background-color: var(--accent-color);
+    color: #ffffff; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect*/
+.custom-btn:hover {
+    filter: brightness(1.1); 
+    transform: translateY(-2px); /* Lifts it up slightly */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Active Effect (When clicked) */
+.custom-btn:active {
+    transform: translateY(0);
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    background-color: var(--surface-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden; 
+    transition: background-color 0.3s;
+}
+
+th {
+    background-color: var(--accent-color);
+    color: var(--tab-header-text);
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--table-border);
+}
+
+/* Zebra Stripes */
+tr:nth-child(even) {
+    background-color: var(--zebra-bg);
+}
+
+/* Hover Effect */
+tr:hover {
+    background-color: var(--hover-bg);
+    transition: background-color 0.2s ease;
+   
+}
+
+/* ... Deine bisherigen Styles ... */
+
+.status-online {
+    border-left: 6px solid #2ecc71; /* Grüner Balken links */
+}
+
+.status-offline {
+    border-left: 6px solid #e74c3c; /* Roter Balken links */
+}
+
+/* Zebra Stripes Anpassung für Statusfarben */
+tr:nth-child(even).status-online { background-color: rgba(46, 204, 113, 0.05); }
+tr:nth-child(even).status-offline { background-color: rgba(231, 76, 60, 0.05); }
+
+/* Dark Mode Anpassung für Statusfarben */
+body.dark-mode .status-online { border-left-color: #27ae60; }
+body.dark-mode .status-offline { border-left-color: #c0392b; }
