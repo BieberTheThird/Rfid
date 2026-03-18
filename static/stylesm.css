@@ -1,0 +1,85 @@
+/* Base design*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+
+
+h1 {
+    color: var(--H1-color);
+    margin-bottom: 20px;
+}   #151B14
+
+:root {
+    --h1-color: #2c3e50;
+    --Tab-textc:#333333;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --table-bg: #f9f9f9;
+    --zebra-bg: #4D4D4D;
+	--hover-bg: #333333;
+	
+}
+
+/* Dark mode Var.*/
+body.dark-mode {
+	--h1-color: #add8e6;
+    --color-bg: #121212;
+    --text-color: #D3D3D3;
+    --table-bg: #1e1e1e;
+    --zebra-bg: #Shadow Black;
+    --hover-bg: #333333;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--text-color);
+    transition: 0.3s; /* Makes the transition smooth */
+}
+
+table {
+    background-color: var(--table-bg);
+}
+
+/* Tabellen-Styling */
+table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    background-color: var(--table-bg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Schatten */
+    border-radius: 8px;
+    overflow: hidden; /* Ecken runden */
+}
+
+/* Header der Tabelle */
+th {
+    background-color: #3498db;
+    color: var(--tab-textc);
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+}
+
+/* Tabellenzellen */
+td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Zebra-Streifen*/
+tr:nth-child(even) {
+    background-color: var(--zebra-bg);
+}
+
+/* Hover-Effekt*/
+tr:hover {
+    background-color: var(--hover-bg);
+    transition: background-color 0.2s ease;
+}

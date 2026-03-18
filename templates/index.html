@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Break Times</title>
+</head>
+<body>
+    <h1>Break Overview</h1>
+    
+    <button class="custom-btn" id="theme-toggle"><var> Mode </var></button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Total Break Time</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in table %}
+            <tr>
+                <td>{{ row.name }}</td>
+                <td>{{ row.break_time }}</td>
+                <td>{{ row.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+  
+    <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Initial Load
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        body.classList.add('dark-mode');
+        toggleBtn.innerText = "Switch to Light Mode";
+    } else {
+        toggleBtn.innerText = "Switch to Dark Mode";
+    }
+
+    // Click Event
+    toggleBtn.addEventListener('click', () => {
+        // Toggle the class
+        body.classList.toggle('dark-mode');
+        
+        // Check current state
+        const isDarkMode = body.classList.contains('dark-mode');
+
+        // Update Button Text
+        if (isDarkMode) {
+            toggleBtn.innerText = "Switch to Light Mode";
+            localStorage.setItem('dark-mode', 'enabled');
+        } else {
+            toggleBtn.innerText = "Switch to Dark Mode";
+            localStorage.setItem('dark-mode', 'disabled');
+        }
+    });
+</script>
+
+</body>
+</html>
